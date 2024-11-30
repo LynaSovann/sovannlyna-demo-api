@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sovannlyna-demo-api-container
-          image: pipejet/sovannlyna-demo-api:4
+          image: pipejet/sovannlyna-demo-api:5
           ports:
             - containerPort: 8080
