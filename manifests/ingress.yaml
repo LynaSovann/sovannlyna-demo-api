@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sovannlyna-demo-api-ingress
+  namespace: sovannlyna-demo-api
+  annotation:
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: api4demo.tinhlgkiddy.fun
+    http:
+      paths:
+      - path: /
+        pathType: Prefix  
+        backend:
+          service:
+            name: sovannlyna-demo-api-service 
+            port:
+              number: 8298
