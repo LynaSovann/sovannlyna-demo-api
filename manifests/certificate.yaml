@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sovannlyna-demo-api-certificate
+  namespace: sovannlyna-demo-api
+spec:
+  secretName: sovannlyna-demo-api-secret-tls
+  commonName: sovannlyna-demo-api.assessify.org
+  dnsNames:
+  - sovannlyna-demo-api.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
