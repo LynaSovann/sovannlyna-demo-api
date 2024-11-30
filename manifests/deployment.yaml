@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sovannlyna-demo-api-deployment
+  labels:
+    app: sovannlyna-demo-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sovannlyna-demo-api
+  template:
+    metadata:
+      labels:
+        app: sovannlyna-demo-api
+    spec:
+      containers:
+        - name: sovannlyna-demo-api-container
+          image: pipejet/sovannlyna-demo-api:0
+          ports:
+            - containerPort: 8080
